@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import contactPagePicture from "../../../static/assets/img/auth/login.jpg";
 // import contactPagePicture from "";
 import contactPagePicture from "../../../static/assets/img/contact/20200131contact01.jpg";
+import phoneNumber from "../../../static/assets/img/contact/phone-number.png";
+import email from "../../../static/assets/img/contact/email.png";
 
 export default function () {
     return (
@@ -22,7 +24,13 @@ export default function () {
                             <FontAwesomeIcon icon="phone" />
                         </div>
 
-                        <div className="text">409 392 6506</div>
+                        <div className="text">
+                            <img
+                                src={phoneNumber}
+                                alt="phone number"
+                                className="phoneNumber"
+                            />
+                        </div>
                     </div>
 
                     <div className="bullet-point-group">
@@ -30,7 +38,9 @@ export default function () {
                             <FontAwesomeIcon icon="envelope" />
                         </div>
 
-                        <div className="text">oleh.kovelskyi@email.com</div>
+                        <div className="text">
+                            <img src={email} alt="" className="email" />
+                        </div>
                     </div>
 
                     <div className="bullet-point-group">
