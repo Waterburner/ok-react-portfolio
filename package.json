@@ -11,8 +11,8 @@
         "prod": "NODE_ENV=production node server.js"
     },
     "engines": {
-        "npm": ">=8.0.0 <9.0.0",
-        "node": ">=14.17.0 <15.0.0"
+        "npm": ">=8.13.x",
+        "node": ">=14.17.x"
     },
     "repository": {
         "type": "git",
