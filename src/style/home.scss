@@ -11,3 +11,10 @@
         }
     }
 }
+
+@media only screen and (max-width: 800px) {
+    .filter-links {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
