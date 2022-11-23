@@ -11,7 +11,7 @@
         "prod": "NODE_ENV=production node server.js"
     },
     "engines": {
-        "node": "14.17.x",
+        "node": "~14.17.x",
         "npm": "~8.13.x"
     },
     "repository": {
