@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import aboutImg from "../../../static/assets/img/about/about_img.jpg";
+import aboutImg from "../../../static/assets/img/about/about_official.jpg";
 // import aboutImg from "http://www.themarketingsage.com/wp-content/uploads/2015/08/about-me-leon-severan-we-buy-houses.jpg";
 
 export default function () {
