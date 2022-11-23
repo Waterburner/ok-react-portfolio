@@ -93,7 +93,7 @@ export default class PortfolioContainer extends Component {
                     </button>
                     <button
                         className="btn"
-                        onClick={() => this.handleFilter("FullStack")}
+                        onClick={() => this.handleFilter("Full Stack")}
                     >
                         Full Stack
                     </button>
