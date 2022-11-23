@@ -8,10 +8,10 @@ export default class PortfolioContainer extends Component {
         super();
 
         this.state = {
-            pageTitle: "Welcome to my portfolio",
+            // pageTitle: "Welcome to my portfolio",
             isLoading: false,
             // isLoading: true,                        // THIS IS JUST A TEST
-            data: []
+            data: [],
         };
 
         // this.handlePageTitleUpdate = this.handlePageTitleUpdate.bind(this);
@@ -22,30 +22,30 @@ export default class PortfolioContainer extends Component {
     handleFilter(filter) {
         if (filter === "clear_filters") {
             this.getPortfolioItems();
-        } else { 
-         this.getPortfolioItems(filter);
+        } else {
+            this.getPortfolioItems(filter);
         }
     }
 
     getPortfolioItems(filter = null) {
         axios
-        .get("https://waterburner.devcamp.space/portfolio/portfolio_items")
-        .then(response => {
-            if (filter) {
-                this.setState({
-                    data: response.data.portfolio_items.filter(item => {
-                        return item.category === filter;
-                    })
-                })
-            } else {
-                this.setState({
-                    data: response.data.portfolio_items
-                });
-            }
-        })
-        .catch(error => {
-            console.log(error);
-        });
+            .get("https://waterburner.devcamp.space/portfolio/portfolio_items")
+            .then((response) => {
+                if (filter) {
+                    this.setState({
+                        data: response.data.portfolio_items.filter((item) => {
+                            return item.category === filter;
+                        }),
+                    });
+                } else {
+                    this.setState({
+                        data: response.data.portfolio_items,
+                    });
+                }
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     }
 
     portfolioItems() {
@@ -54,8 +54,8 @@ export default class PortfolioContainer extends Component {
         // - logo
         // - description: description
         // - id: id
-        
-        return this.state.data.map(item => {
+
+        return this.state.data.map((item) => {
             // debugger;
             return <PortfolioItem key={item.id} item={item} />;
         });
@@ -78,27 +78,39 @@ export default class PortfolioContainer extends Component {
     // }
 
     render() {
-        if (this.state.isLoading) { 
+        if (this.state.isLoading) {
             return <div>Loading...</div>;
         }
 
         return (
             <div className="homepage-wrapper">
-                    <div className="filter-links">
-                        <button className="btn" onClick={() => this.handleFilter("eCommerce")}>
-                            eCommerce
-                        </button>
-                        <button className="btn" onClick={() => this.handleFilter("Scheduling")}>
-                            Scheduling
-                        </button>
-                        <button className="btn" onClick={() => this.handleFilter("Enterprise")}>
-                            Enterprise
-                        </button>
+                <div className="filter-links">
+                    <button
+                        className="btn"
+                        onClick={() => this.handleFilter("eCommerce")}
+                    >
+                        eCommerce
+                    </button>
+                    <button
+                        className="btn"
+                        onClick={() => this.handleFilter("Scheduling")}
+                    >
+                        Scheduling
+                    </button>
+                    <button
+                        className="btn"
+                        onClick={() => this.handleFilter("Enterprise")}
+                    >
+                        Enterprise
+                    </button>
 
-                        <button className="btn" onClick={() => this.handleFilter("clear_filters")}>
-                            All
-                        </button>
-                    </div>
+                    <button
+                        className="btn"
+                        onClick={() => this.handleFilter("clear_filters")}
+                    >
+                        All
+                    </button>
+                </div>
 
                 <div className="portfolio-items-wrapper">
                     {this.portfolioItems()}
